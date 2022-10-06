@@ -1,0 +1,24 @@
+.posts_container{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+    margin-bottom: 10px;
+  
+}
+
+
+.posts_img{
+    width: 300px;
+    height: 300px;
+}
+.post_page_container{
+    display: flex; 
+     column-gap: 50px;
+}
+.post_img_container{
+    display: flex;
+    flex-direction: column;
+}
