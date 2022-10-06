@@ -11,7 +11,7 @@ import { setProductsAC } from './store/products/actionCreator';
 import {setCounterAC} from './store/likes/actionCreators'
 import { setPostsAC } from './store/posts/actionCreators';
 import { setUsersAC } from './store/users/actionCreators';
-import UserHeader from './componentns/userheader/userheader';
+
 
 
 
@@ -19,25 +19,23 @@ const App = () => {
   const dispatch = useDispatch()
   const modal = useSelector(store =>store.modal.value)
   const deleteModal = useSelector(store => store.modal.deleteModalvalue)
- 
- 
-  
-  
-  
-  
-  useEffect(() => {
-
-
-dispatch(setProductsAC())
+ dispatch(setProductsAC())
 dispatch(setCounterAC())
 dispatch(setPostsAC())
 
 dispatch(setUsersAC())
+  
+  
+  useEffect(() => {
+ 
+ 
+
+
+ 
+ 
 
 
   }, [])
-
-
 
 return (
     <>
@@ -51,9 +49,10 @@ return (
         <Modal ></Modal >}
     
     </>
-  );
+  ); 
+ 
 }
 
-
 export default App
+
 
