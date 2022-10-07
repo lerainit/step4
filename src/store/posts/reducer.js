@@ -1,7 +1,8 @@
 import { setPosts } from "./actions";
 
 const initialValue = {
-    value:[],
+    value:JSON.parse(localStorage.getItem('posts')),
+    isLoading:true
 }
 
 
@@ -11,7 +12,7 @@ switch (action.type){
 
 
 case setPosts: {
-return {value:JSON.parse(localStorage.getItem('posts'))}
+return {value:JSON.parse(localStorage.getItem('posts')),isLoading:false}
 }
 default:{
     return state

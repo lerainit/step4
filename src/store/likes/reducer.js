@@ -2,6 +2,7 @@ import { incrementLikes,decrementLikes,setCounter } from "./actions";
 
 const initialValue ={
     counter:JSON.parse(localStorage.getItem('products')),
+    isLoading:true
 }
 
 const likesReducer = (state = initialValue,action) =>{
@@ -9,7 +10,7 @@ const likesReducer = (state = initialValue,action) =>{
     switch (action.type) {
         case setCounter:{
   
-            return {counter:JSON.parse(localStorage.getItem('counter'))}
+            return {counter:JSON.parse(localStorage.getItem('counter')),isLoading:false}
         }
         case incrementLikes: {
  let likes = action.payload.products[action.payload.index].likes
@@ -24,7 +25,7 @@ const likesReducer = (state = initialValue,action) =>{
 
 localStorage.setItem('counter',JSON.stringify(action.payload.products))
 
-          return {counter:JSON.parse(localStorage.getItem('counter'))}
+          return {counter:JSON.parse(localStorage.getItem('counter')),isLoading:false}
         }
   
       
@@ -39,7 +40,7 @@ localStorage.setItem('counter',JSON.stringify(action.payload.products))
 
 localStorage.setItem('counter',JSON.stringify(counter))
 
-          return {counter:JSON.parse(localStorage.getItem('counter'))}
+          return {counter:JSON.parse(localStorage.getItem('counter')),isLoading:false}
         }
        default: {
           return state

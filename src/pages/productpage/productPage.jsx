@@ -14,7 +14,7 @@ const ProductPage = ({id}) => {
 
      
 
-console.log(products)
+
 
 const dispatch = useDispatch()
       

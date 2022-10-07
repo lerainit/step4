@@ -2,6 +2,7 @@ import { setProducts } from "./actions";
 
 const initialValue = {
     value:JSON.parse(localStorage.getItem('products')),
+    isLoading:true
 }
 
 
@@ -11,7 +12,7 @@ switch (action.type){
 
 
 case setProducts: {
-return {value:JSON.parse(localStorage.getItem('products'))}
+return {value:JSON.parse(localStorage.getItem('products')),isLoading:false}
 }
 default:{
     return state

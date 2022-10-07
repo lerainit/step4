@@ -11,6 +11,8 @@ import { setProductsAC } from './store/products/actionCreator';
 import {setCounterAC} from './store/likes/actionCreators'
 import { setPostsAC } from './store/posts/actionCreators';
 import { setUsersAC } from './store/users/actionCreators';
+import { setBackgroundAC } from './store/cardBackground/actionCreators';
+
 
 
 
@@ -18,18 +20,25 @@ import { setUsersAC } from './store/users/actionCreators';
 const App = () => {
   const dispatch = useDispatch()
   const modal = useSelector(store =>store.modal.value)
-  const deleteModal = useSelector(store => store.modal.deleteModalvalue)
- dispatch(setProductsAC())
-dispatch(setCounterAC())
+ const isLoadingProducts = useSelector(store =>store.products.isLoading)
+ console.log(isLoadingProducts)
+ const isLoadingUsers = useSelector(store=>store.users.isLoading)
+ console.log(isLoadingUsers)
+ const isLoadingPosts = useSelector(store=>store.posts.isLoading)
+ const isLoadingCounter = useSelector(store=>store.counter.isLoading)
+ const isLoadingBackground = useSelector(store=>store.background.isLoading)
+
+
+ useEffect(() => {
+ 
+
+
 dispatch(setPostsAC())
+ dispatch(setProductsAC())
 
 dispatch(setUsersAC())
-  
-  
-  useEffect(() => {
- 
- 
-
+  dispatch(setCounterAC())
+dispatch(setBackgroundAC())
 
  
  
@@ -37,6 +46,14 @@ dispatch(setUsersAC())
 
   }, [])
 
+  if(isLoadingPosts || isLoadingUsers || isLoadingProducts || isLoadingCounter || isLoadingBackground){
+    return(
+      <>
+      <h1>LOADING</h1>
+      </>
+    )
+  }
+else{
 return (
     <>
    <div className='App'>
@@ -50,7 +67,7 @@ return (
     
     </>
   ); 
- 
+}
 }
 
 export default App
