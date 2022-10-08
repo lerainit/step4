@@ -1,13 +1,17 @@
-import { addSubscriber } from "./actions";
+import { addSubscriber,setSubscribers } from "./actions";
 
 const initialValue = {
     value:JSON.parse(localStorage.getItem('users')),
+    isLoading:true
  
 }
 const subscriberReducer =(state =initialValue,action) =>{
 
     switch (action.type){
+case setSubscribers:{
 
+    return {value:JSON.parse(localStorage.getItem('users')),isLoading:false}
+}
 
        
         case addSubscriber: {
@@ -22,7 +26,7 @@ const subscriberReducer =(state =initialValue,action) =>{
 
 console.log(users)
 
-            return {value:JSON.parse(localStorage.getItem('users'))}
+            return {value:JSON.parse(localStorage.getItem('users')),isLoading:false}
             }
         default:{
             return state

@@ -9,7 +9,7 @@ const Background =({handleClick,comments,index,userIndex}) =>{
 
   const products = productsArr[userIndex].posts
 
-    console.log(products)
+   
     let counter =products[index].likes
   
 

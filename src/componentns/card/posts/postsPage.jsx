@@ -11,7 +11,7 @@ const PostsPage =()=>{
 
     const posts = useSelector(store => store.posts.value)
     const productsArr = useSelector(store =>store.counter.counter)
-   const products = productsArr[0].posts
+   const products = productsArr[1].posts
 
     return(
         <>
