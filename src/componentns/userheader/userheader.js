@@ -6,10 +6,8 @@ import { NavLink } from "react-router-dom";
 const UserHeader = (props) =>{
     const users= useSelector(store => store.users.value)
 
-    console.log(users)
-    console.log(props.id)
 const index = users.findIndex(el => el.id === props.id)
-console.log(index)
+
     const user = users[index]
 
 return(

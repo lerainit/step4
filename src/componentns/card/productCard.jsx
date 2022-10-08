@@ -11,19 +11,15 @@ import { setProductsAC } from '../../store/products/actionCreator';
  const Card =(props) => {
  
    const products = useSelector(store => store.products.value)
-   //const products = JSON.parse(localStorage.getItem('products'))
-console.log(products)
+
+
  const dispatch = useDispatch();
 
 const id = props.id
 const index = props.index
 
 
- 
-
-
 let storeBackground = props.background
-
 
 
 return(

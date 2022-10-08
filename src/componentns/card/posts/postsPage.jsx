@@ -11,10 +11,7 @@ const PostsPage =()=>{
 
     const posts = useSelector(store => store.posts.value)
     const products = useSelector(store =>store.counter.counter)
-    //const index =  1
-    console.log(products)
-    //const comments = products[index].comments
-  //  const likes = products[index].likes
+   
 
     return(
         <>

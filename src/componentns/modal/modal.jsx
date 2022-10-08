@@ -18,8 +18,6 @@ const Modal = () => {
   const products = useSelector(store => store.counter.counter)
   const users= useSelector(store => store.users.value)
 
-  console.log(users)
-
   const user = users[1]
  
 

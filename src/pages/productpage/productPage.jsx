@@ -2,8 +2,6 @@ import React from 'react'
 import Card from '../../componentns/card/productCard'
 import { useSelector,useDispatch } from 'react-redux'
 import { shallowEqual } from 'react-redux'
-
-import styles from '../../componentns/card/productCard.module.scss'
 import UserHeader from '../../componentns/userheader/userheader'
 
 
@@ -13,9 +11,6 @@ const ProductPage = ({id}) => {
      const products = useSelector(store => store.products.value, shallowEqual)
 
      
-
-
-
 const dispatch = useDispatch()
       
      return (

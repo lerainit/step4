@@ -1,9 +1,6 @@
 import { combineReducers } from "redux";
 import cardIndexReducer from "./cardId/reducer";
 import modalReducer from './modal/reducer'
-import modalTextReducer from "./modalText/reducer";
-
-
 import productsReducer from "./products/reducer";
 import likesReducer from "./likes/reducer";
 import BackgroundReducer from "./cardBackground/reducer";
@@ -14,8 +11,7 @@ import UsersReducer from "./users/reducer";
 const appReducer = combineReducers({
    modal:modalReducer,
    cardIndex:cardIndexReducer,
-   modalText:modalTextReducer,
-   products:productsReducer,
+  products:productsReducer,
   counter:likesReducer,
  background:BackgroundReducer,
  posts:postsReducer,
