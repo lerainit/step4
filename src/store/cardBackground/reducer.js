@@ -15,21 +15,22 @@ const BackgroundReducer =  (state =initialValue, action) =>{
             }
 
             case renderBackground: {
-              
-                let products = state.value
+              let productsArr = state.value
+                let products = productsArr[action.payload.userIndex].posts
               
                  products[action.payload.index].hasBackground = true
 
-              localStorage.setItem('products',JSON.stringify(products))
+              localStorage.setItem('products',JSON.stringify(productsArr))
    
                
                    return{ value:JSON.parse(localStorage.getItem('products')),isLoading:false}
             }
       
             case hideBackground: {
-                let products= state.value
+                let productsArr = state.value
+                let products= productsArr[action.payload.userIndex].posts
               products[action.payload.index].hasBackground = false
-                localStorage.setItem('products',JSON.stringify(products))
+                localStorage.setItem('products',JSON.stringify(productsArr))
   
                      return{ value:JSON.parse(localStorage.getItem('products')),isLoading:false}
               }

@@ -6,17 +6,19 @@ import UserHeader from '../../componentns/userheader/userheader'
 
 
 
-const ProductPage = ({id}) => {
+const ProductPage = (props) => {
 
-     const products = useSelector(store => store.products.value, shallowEqual)
+     const productsArr = useSelector(store => store.products.value, shallowEqual)
+const userIndex = props.index
 
+const products = productsArr[userIndex].posts
      
 const dispatch = useDispatch()
       
      return (
           <>
-          <UserHeader id ={id} />
-               {products.map(({ id, name, price, art, url,hasBackground}, index) => <Card key={index} id={id} name={name} price={price} art={art} url={url} background = {hasBackground ? true : false}  index={index} products={products} ></Card>)}
+          <UserHeader id ={props.id} />
+               {products.map(({ id, name, price, art, url,hasBackground}, index) => <Card key={index} id={id} name={name} price={price} art={art} url={url} background = {hasBackground ? true : false} userIndex ={userIndex}  index={index} products={products} ></Card>)}
 
           </>
      )

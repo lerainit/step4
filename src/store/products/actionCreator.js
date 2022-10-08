@@ -8,9 +8,9 @@ if(!localStorage.getItem('products')){
         const products = await fetch('productsJSON.json').then(response =>response.json());
  
 
-  const products2 = products[1]
+  //const products2 = products[1]
     
-        localStorage.setItem(`products`,JSON.stringify(products2.posts))
+        localStorage.setItem(`products`,JSON.stringify(products))
            
          
             dispatch({ type:setProducts,})

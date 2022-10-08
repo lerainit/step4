@@ -7,6 +7,7 @@ import BackgroundReducer from "./cardBackground/reducer";
 import postsReducer from "./posts/reducer";
 import UsersReducer from "./users/reducer";
 import subscriberReducer from "./subscribers/reducer";
+import userIndexReducer from "./userIndex/reducer";
 
 
 const appReducer = combineReducers({
@@ -17,7 +18,8 @@ const appReducer = combineReducers({
  background:BackgroundReducer,
  posts:postsReducer,
  users:UsersReducer,
- subscribers:subscriberReducer
+ subscribers:subscriberReducer,
+ userIndex:userIndexReducer
 
 })
 export default appReducer

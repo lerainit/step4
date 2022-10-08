@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './modal.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeModalAC } from '../../store/modal/actionCreators'
-import { incrementLikesAC } from '../../store/likes/actionCreators'
+import { incrementLikesAC, setCounterAC } from '../../store/likes/actionCreators'
 
 
 
@@ -14,16 +14,17 @@ const Modal = () => {
 
 
   const index = useSelector(store => store.cardIndex.value)
+const users = useSelector(store =>store.users.value)
+  const productsArr = useSelector(store => store.counter.counter)
+  const userIndex = useSelector(store =>store.userIndex.value)
+const user = users[userIndex]
+const products = productsArr[userIndex].posts
 
-  const products = useSelector(store => store.counter.counter)
-  const users= useSelector(store => store.users.value)
-
-  const user = users[1]
  
 
-  const  products2 = JSON.parse(localStorage.getItem('counter'))
+
  
-     let counter =products2[index].likes
+     let counter =products[index].likes
    
   return (
 
@@ -40,7 +41,8 @@ const Modal = () => {
 <div className={styles.comments}>
   {products[index].comments.map(el => <h3 className={styles.comment}>{el}</h3>)}
   <h3><span>Likes</span>{counter}</h3>
-  <button className={styles.modal_btn} onClick ={() =>{dispatch(incrementLikesAC({products:products,index:index}))}}>Like</button>
+  <button className={styles.modal_btn} onClick ={() =>{dispatch(incrementLikesAC({index:index,userIndex:userIndex}))
+dispatch(setCounterAC())}}>Like</button>
 </div>
 
 

@@ -9,9 +9,9 @@ export const setCounterAC = () => async (dispatch) => {
         try {
             const counter = await fetch('productsJSON.json').then(response =>response.json());
 
-            const counter2= counter[0]
          
-                localStorage.setItem('counter',JSON.stringify(counter2.posts))
+         
+                localStorage.setItem('counter',JSON.stringify(counter))
                
                
                 dispatch({ type:setCounter})
