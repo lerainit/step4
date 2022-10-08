@@ -1,11 +1,9 @@
 import React from 'react'
 import {Routes, Route} from 'react-router-dom'
-
-
 import ProductPage from './pages/productpage/productPage';
 import NotFoundPage from './pages/notfoundpage/notfoundpage';
 import PostsPage from './componentns/card/posts/postsPage';
-import Navigation from './componentns/navigation/Navigation';
+
 
 const AppRoutes = () => {
 const id1 =1
