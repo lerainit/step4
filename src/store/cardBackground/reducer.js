@@ -17,7 +17,7 @@ const BackgroundReducer =  (state =initialValue, action) =>{
             case renderBackground: {
               
                 let products = state.value
-                 console.log(products) 
+              
                  products[action.payload.index].hasBackground = true
 
               localStorage.setItem('products',JSON.stringify(products))
