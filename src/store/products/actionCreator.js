@@ -13,16 +13,17 @@ if(!localStorage.getItem('products')){
         localStorage.setItem(`products`,JSON.stringify(products2.posts))
            
          
-            dispatch({ type:setProducts})
+            dispatch({ type:setProducts,})
         
      
 
     } catch (err) {
      
         console.log(err);
-    }}
+    }
+}
     else{
-        dispatch({type:setProducts})
+        dispatch({type:setProducts,payload:[]})
     }
 
 } 

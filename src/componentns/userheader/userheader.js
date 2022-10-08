@@ -1,15 +1,20 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import styles  from './userHeader.module.scss'
 import { NavLink } from "react-router-dom";
+import { addSubscriberAC } from "../../store/subscribers/actionCreators";
+import { addSubscriber } from "../../store/subscribers/actions";
+import { setUsers } from "../../store/users/actions";
 
 const UserHeader = (props) =>{
+    const dispatch = useDispatch()
     const users= useSelector(store => store.users.value)
+   
 
 const index = users.findIndex(el => el.id === props.id)
 
     const user = users[index]
- 
+
  
 
 return(
@@ -29,6 +34,8 @@ return(
 
 <h3>{user.info}</h3>
 </div>
+<button className={styles.subscribe_btn} onClick ={()=>{dispatch(addSubscriberAC({index:index,subscriber:user}))
+dispatch({type:setUsers})}}>Subscribe</button>
 </header>
 
 </>

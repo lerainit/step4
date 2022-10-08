@@ -15,6 +15,7 @@ import { setBackgroundAC } from './store/cardBackground/actionCreators';
 
 
 
+
 const App = () => {
   const dispatch = useDispatch()
   const modal = useSelector(store =>store.modal.value)
@@ -23,6 +24,7 @@ const App = () => {
  const isLoadingPosts = useSelector(store=>store.posts.isLoading)
  const isLoadingCounter = useSelector(store=>store.counter.isLoading)
  const isLoadingBackground = useSelector(store=>store.background.isLoading)
+ 
 
 
  useEffect(() => {
@@ -33,9 +35,10 @@ dispatch(setUsersAC())
   dispatch(setCounterAC())
 dispatch(setBackgroundAC())
 
+
   }, [])
 
-  if(isLoadingPosts || isLoadingUsers || isLoadingProducts || isLoadingCounter || isLoadingBackground){
+  if(isLoadingPosts || isLoadingUsers || isLoadingProducts || isLoadingCounter || isLoadingBackground ){
     return(
       <>
       <h1>LOADING</h1>
