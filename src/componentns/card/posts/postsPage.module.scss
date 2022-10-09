@@ -6,7 +6,7 @@
     border: 1px solid black;
     align-items: center;
     margin-bottom: 10px;
-  
+  position: relative;
 }
 
 
@@ -21,4 +21,8 @@
 .post_img_container{
     display: flex;
     flex-direction: column;
+}
+.svg{
+     width: 2em; height: 2em;vertical-align: middle;fill: #000;overflow: hidden;
+     position: absolute;top: 380px; left: 110px;
 }
