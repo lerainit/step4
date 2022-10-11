@@ -40,7 +40,7 @@ const products = productsArr[userIndex].posts
 <img className={styles.modal_img} src={products[index].url} />
 <div className={styles.comments}>
   {products[index].comments.map(el => <h3 className={styles.comment}>{el}</h3>)}
-  <h3><span>Likes</span>{counter}</h3>
+  <h3><span className={styles.modal_span}>Likes</span>{counter}</h3>
  
   <svg   onClick ={() =>{
             dispatch(incrementLikesAC({index:index,userIndex:userIndex})) 

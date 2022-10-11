@@ -28,7 +28,7 @@ return(
 <h2 className={styles.user_nickname}>{user.nickName}</h2>
 
 <h3 className={styles.user_posts}>{user.posts.length}<span className={styles.user_span}>posts</span></h3>
-<h3 className={styles.user_subscribers}>{user.subscribers.length}<span>followers</span></h3>
+<h3 className={styles.user_subscribers}>{user.subscribers.length}<span className={styles.user_span}>followers</span></h3>
 
 <h2 className={styles.user_name}>{user.name}</h2>
 
